@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Placed Students Info</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}"
+  </head>
+  <body>
+    <div class="container theme-showcase" role="main">
+
+    <div style="color:#fff; background-color:orange", class="jumbotron">
+      <h1>Student Details</h1>
+    </div>
+
+    <!--for loop starts-->
+      {% for r in result %}
+      <table style="width:100%">
+  <tr>
+    <th>USN</th>
+    <th>Name</th>
+    <th>Company</th>
+    <th>Designation</th>
+    <th>Package</th>
+  </tr>
+  <tr>
+    <td>{{r.usn}}</td>
+    <td>{{r.name}}</td>
+    <td>{{r.company}}</td>
+    <td>{{r.designation}}</td>
+    <td>{{r.package}}</td>
+  </tr>
+  </table>
+      {% endfor %}
+
+
+
+    <nav style="margin-top:25px;margin-left:45px">
+    <a class="btn btn-primary" href="{{ url_for('student') }}">Add your details</a>
+  </nav>
+  <br>
+
+  </body>
+</html>
